@@ -119,18 +119,9 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
-  const esseAno = Number(prompt("Digite o ano atual"))
-  const anoNascimento = Number(prompt("Digite o ano de nascimento"))
-  const anoEmissaoCNH = Number(prompt("Digite o ano de emissão da sua CNH"))
 
-  const idadeCondutor = (esseAno - anoNascimento)
-  
-  const menorIdade = idadeCondutor < 18 
-  const temVinteOuMenos = (18 < idadeCondutor <= 20) // true false
-  const temEntreTwentyNFifty = (20 < idadeCondutor <= 50) 
-  const temMaisdeFifty = (idadeCondutor > 50)
-  
 }
+
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
