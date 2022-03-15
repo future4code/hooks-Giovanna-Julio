@@ -1,0 +1,8 @@
+    Na aula de ontem aprendemos os sete passos fundamentais para resolver um problema de código. Esse processo consiste em sete etapas, cada uma com um objetivo, adentremo-nas.
+    O primeiro passo se baseia no enunciado, onde deve-se identificar o problema e definir qual será a aplicação do código.
+    No segundo passo então salvamos as palavras-chave para usa-las como variávei e identificamos os verbos que exprimem funções. Também se verificam as condições para existência do código.
+    No terceiro passo, definimos os inputs, outputs, e suas respectivas formas de tratamento. Criamos as funçoes. Assim, começa-se a estruturar o formato do código. 
+    No quarto passo, fazemos o brainstorm de exemplos, diagramas e cenários aos quais o código será submetido; já no quinto passo faz-se o brainstorm de TODAS as possíveis soluções.
+    No quinto passo ainda, escolhemos as melhores ideias criamos um código bem feio.
+    Já no sexto passo fazemos um teste com todas as soluçoes e funções.
+    No útlimo passo, refatoramos o código, deixando-o sucinto, objetivo e bem limpinho, concatenado.
