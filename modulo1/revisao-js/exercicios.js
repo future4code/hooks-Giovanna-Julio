@@ -123,16 +123,34 @@ function retornaSegundoMaiorESegundoMenor(array) {
 function retornaChamadaDeFilme(filme) {
     let atoresDoFilme = filme.atores.join(", ")
     return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${atoresDoFilme}.`
- }
+}
 
 // EXERCÍCIO 12
-function retornaPessoaAnonimizada(pessoa) { }
+function retornaPessoaAnonimizada(pessoa) {
+    let novaPessoa = {
+        ...pessoa,
+        nome: "ANÔNIMO"
+    }
+    return novaPessoa
+}
 
 // EXERCÍCIO 13A
-function retornaPessoasAutorizadas(pessoas) { }
+function retornaPessoasAutorizadas(pessoas) {
+    let pessoasAutorizadas = pessoas.filter((pessoas) => {
+        return pessoas.altura >= 1.5 && pessoas.idade <= 60 && pessoas.idade > 14
+    });
+
+    return pessoasAutorizadas
+}
 
 // EXERCÍCIO 13B
-function retornaPessoasNaoAutorizadas(pessoas) { }
+function retornaPessoasNaoAutorizadas(pessoas) {
+    let pessoasNaoAutorizadas = pessoas.filter((pessoas) => {
+        return pessoas.altura < 1.5 || pessoas.idade > 60 || pessoas.idade <= 14
+    });
+
+    return pessoasNaoAutorizadas
+}
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) { }
