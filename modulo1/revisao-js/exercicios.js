@@ -42,12 +42,14 @@ function retornaNumerosParesElevadosADois(array) {
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
     let i = 0;
+
     let maior = -Infinity;
     for (i; i < array.length; i++) {
         if (array[i] > maior) {
             maior = array[i];
         }
     }
+
     return maior;
 }
 
@@ -111,7 +113,11 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 }
 
 // EXERCÍCIO 10
-function retornaSegundoMaiorESegundoMenor(array) { }
+function retornaSegundoMaiorESegundoMenor(array) {
+    array.sort((a, b) => a - b)
+    let novoArray = [array[array.length - 2], array[1]]
+    return novoArray
+}
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) { }
