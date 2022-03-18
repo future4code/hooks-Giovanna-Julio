@@ -153,10 +153,16 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 }
 
 // EXERCÍCIO 14
-function retornaContasComSaldoAtualizado(contas) { }
+function retornaContasComSaldoAtualizado(contas) {
+
+}
 
 // EXERCÍCIO 15A
-function retornaArrayOrdenadoAlfabeticamente(consultas) { }
+function retornaArrayOrdenadoAlfabeticamente(consultas) {
+
+}
 
 // EXERCÍCIO 15B
-function retornaArrayOrdenadoPorData(consultas) { }
+function retornaArrayOrdenadoPorData(consultas) {
+
+}
