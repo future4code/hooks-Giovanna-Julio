@@ -92,3 +92,13 @@ const mensagemYpe = soYpe.map((soYpe)=>{
 })
 console.log(mensagemYpe)
 
+// Desafios:
+
+let pokemons = [
+    { nome: "Bulbasaur", tipo: "grama" },
+    { nome: "Bellsprout", tipo: "grama" },
+    { nome: "Charmander", tipo: "fogo" },
+    { nome: "Vulpix", tipo: "fogo" },
+    { nome: "Squirtle", tipo: "água" },
+    { nome: "Psyduck", tipo: "água" },
+ ]
