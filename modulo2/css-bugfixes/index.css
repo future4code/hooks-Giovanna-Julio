@@ -75,6 +75,8 @@ div img {
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+    list-style-type: decimal;
+    list-style-position: inside;
 }
 
 #container-para-comprar {
