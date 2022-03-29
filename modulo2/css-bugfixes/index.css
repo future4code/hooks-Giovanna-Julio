@@ -58,9 +58,12 @@ div img {
 }
 
 .icone {
-    height: 15px;
+    height: 10px;
 }
 
+.icone:hover{
+    opacity: 2;
+}
 
 /** 
   *
@@ -151,3 +154,4 @@ td button {
     color: white;
     background-color:#fe7e02;
 }
+
