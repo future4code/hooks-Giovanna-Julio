@@ -112,8 +112,12 @@ td button {
 }
 
 .container-do-search {
-    margin-top: 20px;
-    height: 100px;
+    margin-top: 10px;
+    height: 20px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-width: 3px;
 }
 
 
