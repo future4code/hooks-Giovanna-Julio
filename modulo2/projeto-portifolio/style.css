@@ -1,0 +1,126 @@
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 97%;
+    background-color: black;
+    color: antiquewhite;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 15px;
+    padding: 1.5%;
+}
+
+.header{
+    background-color: black;
+    color: antiquewhite;
+    margin : 0px;
+    padding : 20px;
+    text-align: left;
+    border-bottom-style:solid;
+    border-color: antiquewhite;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 15px;
+}
+
+.menu{
+    background-color: black;
+    text-align: left;
+    padding: 10px;
+    border-radius: 15px;
+    border-bottom-style:solid;
+    border-left-style: solid ;
+    border-right-style: solid ;
+    border-color: antiquewhite;
+}
+
+.buttons{
+    color: antiquewhite;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+}
+
+.indexboxes{
+    width: 400px; 
+    float:left; 
+    height:200px; 
+    background:antiquewhite; 
+    margin:10px;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    border-radius: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    object-position: center;
+    padding: 5px
+    
+}
+
+.indexbigboxes{
+    background:antiquewhite; 
+    margin:10px;
+    text-align:justify;
+    border-color: black;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 2.5%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footericons{
+    max-width: 25px;
+    max-height: 25px;
+    border-radius: 2.5%;
+}
+
+.body{
+    background: url("./1268183.jpeg");
+}
+
+.titles{
+    color: antiquewhite;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+}
+
+.keepgoinglinks{
+    color: grey;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+.indeximages{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.seemoreboxes{
+    text-align: center;
+    font-size: large;
+}
+
+.academicimages{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.formbox{
+    background:antiquewhite; 
+    margin:10px;
+    text-align:center;
+    border-color: black;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 2.5%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: auto;
+}
+ 
+.img{
+    text-align: center;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: antiquewhite;
+    display: block;
+    margin: 0 auto;
+}
