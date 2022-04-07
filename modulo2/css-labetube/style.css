@@ -64,3 +64,14 @@ a {
     color: black;
     text-decoration: none;
 }
+
+@media screen and (max-device-width:800px) {
+    main {
+        display:flex;
+        flex-direction: column;
+    }
+
+    main > div{
+        margin: 1em
+    }
+}
