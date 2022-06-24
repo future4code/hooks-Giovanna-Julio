@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from './pages/HomePage'
-import TripDetailsPage from './pages/TripDetailsPage'
-import DestinationsPage from './pages/DestinationsPage'
-import CreateTripPage from './pages/CreateTripPage'
-import ApplicationPage from './pages/ApplicationPage'
-import AdmBoradPage from './pages/AdmBoardPage'
-import LoginPage from "./pages/LoginPage";
+import HomePage from '../pages/HomePage'
+import TripDetailsPage from '../pages/TripDetailsPage'
+import DestinationsPage from '../pages/DestinationsPage'
+import CreateTripPage from '../pages/CreateTripPage'
+import ApplicationPage from '../pages/ApplicationPage'
+import AdmBoradPage from '../pages/AdmBoardPage'
+import LoginPage from "../pages/LoginPage";
 
 function Router(){
     return(
