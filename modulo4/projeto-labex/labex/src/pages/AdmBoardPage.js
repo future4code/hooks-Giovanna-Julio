@@ -73,6 +73,8 @@ const TripCard = styled.div`
     }
 `;
 
+
+
 const AdmBoardPage = () => {
 	// Protected page
 	useProtectPage();
