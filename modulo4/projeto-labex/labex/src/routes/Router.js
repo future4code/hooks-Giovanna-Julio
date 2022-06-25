@@ -6,6 +6,7 @@ import CreateTripPage from '../pages/CreateTripPage'
 import ApplicationPage from '../pages/ApplicationPage'
 import AdmBoradPage from '../pages/AdmBoardPage'
 import LoginPage from "../pages/LoginPage";
+import ErrorPage from "../pages/ErrorPage"
 
 function Router(){
     return(
@@ -24,6 +25,8 @@ function Router(){
                 <Route path="/admin/trips/create" element={<CreateTripPage />} />
 
                 <Route path="/admin/trips/:id" element={<TripDetailsPage />} />
+
+                <Route path="*" element={<ErrorPage />} />
             </Routes>
         </BrowserRouter>
     )
