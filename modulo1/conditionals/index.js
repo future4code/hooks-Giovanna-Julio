@@ -74,92 +74,133 @@
         howMany: Number(prompt("How many tickets do you wish to purchase?"))
     }
 
-
     const dollar =  4.10
 
-    if (soccerFanInfo.category === 1) {
-        if (soccerFanInfo.phase === "SF") {
-            if (soccerFanInfo.type === "IN") {
-                console.log("Your total is", 1320*soccerFanInfo.howMany*dollar)
-            } else {
-                console.log("Your total is", 1320*soccerFanInfo.howMany)
-            }
-        } else if (soccerFanInfo.phase === "TD") {
-            if (soccerFanInfo.type === "IN") {
-                console.log("Your total is", 660*soccerFanInfo.howMany*dollar)
-            } else {
-                console.log("Your total is", 660*soccerFanInfo.howMany)
-            }
-        } else if ( soccerFanInfo.phase === "FI") {
-            if (soccerFanInfo.type === "IN") {
-                console.log("Your total is", 1980*soccerFanInfo.howMany*dollar)
-            } else {
-                console.log("Your total is", 1980*soccerFanInfo.howMany)
-            }
-        }
-    } else if (soccerFanInfo.category === 2) {
-        if (soccerFanInfo.phase === "SF") {
-            if (soccerFanInfo.type === "IN") {
-                console.log("Your total is", 880*soccerFanInfo.howMany*dollar)
-            } else {
-                console.log("Your total is", 880*soccerFanInfo.howMany)
-            }
-        } else if (soccerFanInfo.phase === "TD") {
-            if (soccerFanInfo.type === "IN") {
-                console.log("Your total is", 440*soccerFanInfo.howMany*dollar)
-            } else {
-                console.log("Your total is", 440*soccerFanInfo.howMany)
-            }
-        } else if ( soccerFanInfo.phase === "FI") {
-            if (soccerFanInfo.type === "IN") {
-                console.log("Your total is", 1320*soccerFanInfo.howMany*dollar)
-            } else {
-                console.log("Your total is", 1320*soccerFanInfo.howMany)
-            }
-        }
-    } else if (soccerFanInfo.category === 3) {
-            if (soccerFanInfo.phase === "SF") {
-                if (soccerFanInfo.type === "IN") {
-                    console.log("Your total is", 550*soccerFanInfo.howMany*dollar)
-                } else {
-                    console.log("Your total is", 550*soccerFanInfo.howMany)
-                }
-            } else if (soccerFanInfo.phase === "TD") {
-                if (soccerFanInfo.type === "IN") {
-                    console.log("Your total is", 330*soccerFanInfo.howMany*dollar)
-                } else {
-                    console.log("Your total is", 330*soccerFanInfo.howMany)
-                }
-            } else if ( soccerFanInfo.phase === "FI") {
-                if (soccerFanInfo.type === "IN") {
-                    console.log("Your total is", 880*soccerFanInfo.howMany*dollar)
-                } else {
-                    console.log("Your total is", 880*soccerFanInfo.howMany)
-                }
-            }
-    } else if (soccerFanInfo.category === 4) {
-            if (soccerFanInfo.phase === "SF") {
-                if (soccerFanInfo.type === "IN") {
-                    console.log("Your total is", 220*soccerFanInfo.howMany*dollar)
-                } else {
-                    console.log("Your total is", 220*soccerFanInfo.howMany)
-                }
-            } else if (soccerFanInfo.phase === "TD") {
-                if (soccerFanInfo.type === "IN") {
-                    console.log("Your total is", 170*soccerFanInfo.howMany*dollar)
-                } else {
-                    console.log("Your total is", 170*soccerFanInfo.howMany)
-                }
-            } else if ( soccerFanInfo.phase === "FI") {
-                if (soccerFanInfo.type === "IN") {
-                    console.log("Your total is", 330*soccerFanInfo.howMany*dollar)
-                } else {
-                    console.log("Your total is", 330*soccerFanInfo.howMany)
-                }
-            }
-        } else {
-            console.log("An error has occured")
-        } 
     
+    switch (soccerFanInfo.category){
+        
+        case (1):
+            switch (soccerFanInfo.phase) {
+                case ('SF'):
+                    if (soccerFanInfo.type === 'IN') {
+                        console.log("Your total is", 1320*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 1320*soccerFanInfo.howMany)
+                    }
+                break
+                
+                case ('TD'):
+                    if(soccerFanInfo.type === 'IN') {
+                        console.log("Your total is", 660*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 660*soccerFanInfo.howMany)
+                    }
+                break
+
+                case (soccerFanInfo.phase === "FI"):
+                    if (soccerFanInfo.type === "IN") {
+                        console.log("Your total is", 1980*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 1980*soccerFanInfo.howMany)
+                    }
+                break
+
+                default:
+                    console.log('Error!')
+            }
+
+        case (2):
+            switch(soccerFanInfo.phase) {
+                case ("SF"):
+                    if (soccerFanInfo.type === "IN") {
+                        console.log("Your total is", 880*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 880*soccerFanInfo.howMany)
+                    }
+                break
+
+                case ("TD"):
+                    if (soccerFanInfo.type === "IN") {
+                        console.log("Your total is", 440*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 440*soccerFanInfo.howMany)
+                    }
+                break
+
+                case ("FI"):
+                    if (soccerFanInfo.type === "IN") {
+                        console.log("Your total is", 1320*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 1320*soccerFanInfo.howMany)
+                    }
+                break
+
+                default:
+                    console.log('Error!')
+            }
+
+        case (3):
+            switch(soccerFanInfo.phase){
+                case ("SF"):
+                    if (soccerFanInfo.type === "IN") {
+                        console.log("Your total is", 550*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 550*soccerFanInfo.howMany)
+                    }
+                break
+
+                case ("TD"):
+                    if (soccerFanInfo.type === "IN") {
+                        console.log("Your total is", 330*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 330*soccerFanInfo.howMany)
+                    }
+                break
+
+                case ("FI"):
+                    if (soccerFanInfo.type === "IN") {
+                        console.log("Your total is", 880*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 880*soccerFanInfo.howMany)
+                    }
+                break
+
+                default:
+                    console.log('Error!')
+            }
+
+        case (4):
+            switch(soccerFanInfo.phase){
+                case ("SF"):
+                    if (soccerFanInfo.type === "IN") {
+                        console.log("Your total is", 220*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 220*soccerFanInfo.howMany)
+                    }
+                break
+
+                case ("TD"): 
+                    if (soccerFanInfo.type === "IN") {
+                        console.log("Your total is", 170*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 170*soccerFanInfo.howMany)
+                    }
+                break
+
+                case ("FI"):
+                    if (soccerFanInfo.type === "IN") {
+                        console.log("Your total is", 330*soccerFanInfo.howMany*dollar)
+                    } else {
+                        console.log("Your total is", 330*soccerFanInfo.howMany)
+                    }
+                break
+
+                default:
+                    console.log('Error!')
+            }
+
+        default:
+            console.log('Error!')
+    }    
 
     console.log(`Thank you ${soccerFanInfo.name}, you've purchased ${soccerFanInfo.howMany} tickets for a catergory ${soccerFanInfo.category}, ${soccerFanInfo.phase} phase, ${soccerFanInfo.type} game!!!`)
