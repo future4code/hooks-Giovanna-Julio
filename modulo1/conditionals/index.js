@@ -1,55 +1,13 @@
-// CONDICIONAIS
-
-/* Exercícios de Interpretação
- * 
- * Exercício 1:
- *  
- *  a. O código testa se o número inserido pelo usuário é 
- *     par.
- * 
- *  b. Pares.
- * 
- *  c. Ímpares.
- * 
- * Exercício 2:
- *  
- *  a. O código serve para informar oo usuário sobre o
- *     preço de uma determinada fruta.
- *  
- *  b. O preço da fruta Maçã é R$ 2.25
- * 
- *  c. O preço da fruta Pêra é R$ 5.5
- *     O preço da fruta null é R$ 5
- * 
- * Exercício 3:
- * 
- *  a. A primeira linha está recebendo uma string de um 
- *     usuário e a transformando para number
- * 
- *  b. Para o número 10: Esse número passou no teste 
- *     undefined
- *     Para o número -10: undefined
- * 
- *  c. O console não conseguirá imprimir a mensagm da 
- *      variável mensagem, pois a variável foi declarada no 
- *      escopo local da função e só pode ser acessada 
- *      dentro deste escopo.
- * 
- */
-
-// Exercícios de Escrita
-
-// Exercício 1:
-
+/********************************************************************/
     let userage = Number(prompt("How old are you?"))
 
     if (userage >= 18) {
-        console.log("Você pode dirigir")
+        console.log("You can drive")
     } else {
-        console.log("Você não pode dirigir")
+        console.log("You cannot drive")
     }
 
-// Exercício 2:
+/********************************************************************/
 
     let period = prompt("Enter what period do you watch classes during. 'M' for Mornings, 'A' for Afternoons, or 'N' for Nights")
 
@@ -65,7 +23,7 @@
         console.log("She doesn't even go here!")
     }
 
-// Exercício 3:
+/********************************************************************/
 
     switch(formatedPeriod) {
         case "M" :
@@ -82,9 +40,10 @@
             break
     }
 
-// Exercício 4:
-    wantedMovieKind = "fantasia"
-    budgetForTicket = 15
+/********************************************************************/
+
+    let wantedMovieKind = "fantasia"
+    let budgetForTicket = 15
 
     movieKind = prompt("What kind of movie are you watching?")
     costOfTicket = Number(prompt("How much is the ticket?"))
@@ -97,9 +56,6 @@
         console.log("Please choose another movie :(")
     }
 
-// Desafios
-
-// Exercício 1:
    
     if ((wantedMovieKind === formatMovieKind) && (costOfTicket <= budgetForTicket)) {
         let userSnack = prompt("What kind of snack would you like?")
@@ -108,7 +64,7 @@
         console.log("Please choose another movie :(")
     }
 
-// Exercício 2:
+/********************************************************************/
 
     const soccerFanInfo = {
         name : prompt("Enter your name"),
