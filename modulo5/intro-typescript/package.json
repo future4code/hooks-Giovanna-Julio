@@ -1,0 +1,16 @@
+{
+  "name": "intro-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc index.ts && node ./build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Giovanna Julio",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}
