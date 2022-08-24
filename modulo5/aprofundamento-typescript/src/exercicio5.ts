@@ -1,0 +1,1 @@
+// a) mudamos a versão da linguagem usada para es6, tiramos strict, forceConsistentCasingInFileNames e esmoduleinterop, definimos que tem source map, diretorios de entrada e saida, mexemos com a configuração de comentários no código e deixamos claro que nao pode ter nenhum tipo any implicito no codigo.
