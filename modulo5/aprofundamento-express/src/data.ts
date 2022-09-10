@@ -1,11 +1,15 @@
-type taskFormat = {
+export type taskFormat = {
     userId: number,
-    id: number,
+    id: number | string,
+
     title: string,
     completed: boolean
 }
 
-const toDo: taskFormat[] = [
+
+export const toDo: taskFormat[] = [
+
+
     {
         userId: 1,
         id: 11,
