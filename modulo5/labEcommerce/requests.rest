@@ -1,0 +1,33 @@
+### GET http://localhost:3306/users
+
+### POST http://localhost:3306/users
+Content-Type: application/json
+
+{
+    "name": "Gi", 
+    "email": "gi@gi.com", 
+    "password": "password"
+}
+
+### GET http://localhost:3306/products
+
+### POST http://localhost:3306/products 
+Content-Type: application/json
+
+{
+    "name": "Selfie",
+    "price": 20,
+    "image_url": "https://avatars.githubusercontent.com/u/62773607?s=48&v=4"
+}
+
+### GET http://localhost:3306/users/1/purchases
+
+### POST http://localhost:3306/purchases 
+Content-Type: application/json
+
+{
+    "user_id": "1",
+    "product_id": "1",
+    "quantity": 3,
+    "price": 60
+}
