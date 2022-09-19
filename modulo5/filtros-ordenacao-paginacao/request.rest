@@ -1,0 +1,9 @@
+### GET http://localhost:3306/users/name
+
+### GET http://localhost:3306/users/names?user=Maju
+
+### GET http://localhost:3306/users/page?page=1
+
+### GET http://localhost:3306/users/Teacher
+
+### GET http://localhost:3306/users/advancedsearch/Teacher/name?user=Maju?page=1
