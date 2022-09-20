@@ -20,11 +20,11 @@ const createTables = async (): Promise<void> => {
 
             CREATE TABLE IF NOT EXISTS labecommerce_purchases (
                 id VARCHAR(255) PRIMARY KEY,
-                user_id VARCHAR(255) FOREIGN KEY,
-                product_id VARCHAR(255) FOREIGN KEY,
-                quantity INT NOT NULL
+                user_id VARCHAR(255) NOT NULL,
+                product_id VARCHAR(255) NOT NULL,
+                quantity INT NOT NULL,
                 total_price DECIMAL(6,4) NOT NULL,
-                FOREIGN KEY (user_id) REFERENCES labecommerce_users(id)
+                FOREIGN KEY (user_id) REFERENCES labecommerce_users(id),
                 FOREIGN KEY (product_id) REFERENCES labecommerce_products(id)
             );
         `) 

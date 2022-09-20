@@ -8,7 +8,7 @@ export const postUserRegistration = async (req: Request, res: Response): Promise
 	try {
         const {name, email, password} = req.body;
         if (!name || !email || !password) throw new Error ("You must inform name, e-mail and password.");
-        if (!password.includes("@")) throw new Error ("Please provide a valid e-mail address.");
+        if (password.search("@") === false) throw new Error ("Please provide a valid e-mail address.");
 
         const verifyEmail = await connection("labecommerce_users")
             .select("*")

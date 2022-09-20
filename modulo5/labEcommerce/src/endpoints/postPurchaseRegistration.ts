@@ -26,8 +26,7 @@ export const postPurchaseRegistration = async (req: Request, res: Response): Pro
             throw new Error ("Product not found.");
         };
 
-        const productPrice = Number(findValues("labecommerce_products", "price", product_id))
-        const total_price = productPrice * quantity
+        const total_price = verifyProduct[0].price * quantity
 
         const newPurchase: purchaseReg = {
             id: generateId(),
@@ -46,10 +45,4 @@ export const postPurchaseRegistration = async (req: Request, res: Response): Pro
 	}
 };
 
-const findValues = async (table: String, column: string, where: string): Promise<any> => {
-    const result = await connection(`${table}`)
-            .select(`${column}`)
-            .where({id: `${where}`});
-
-    return result;
-};
+// 
