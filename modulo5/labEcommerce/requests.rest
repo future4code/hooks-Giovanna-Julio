@@ -1,4 +1,5 @@
-### GET http://localhost:3306/users
+### getAllUsers
+GET http://localhost:3306/users
 
 ### POST http://localhost:3306/users
 Content-Type: application/json
@@ -9,7 +10,8 @@ Content-Type: application/json
     "password": "password"
 }
 
-### GET http://localhost:3306/products
+### getAllProducts
+GET http://localhost:3306/products?order=asc&search=xuxu
 
 ### POST http://localhost:3306/products 
 Content-Type: application/json
@@ -20,7 +22,8 @@ Content-Type: application/json
     "image_url": "https://avatars.githubusercontent.com/u/62773607?s=48&v=4"
 }
 
-### GET http://localhost:3306/users/1/purchases
+### getAllPurchases
+GET http://localhost:3306/users/1/purchases
 
 ### POST http://localhost:3306/purchases 
 Content-Type: application/json
