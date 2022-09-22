@@ -63,7 +63,7 @@ export const getAllProducts = async (req: Request, res: Response): Promise<void>
                     .orderBy("name", `${order}`);
 
                 if (!products.length) {
-                    errorCode = 500;
+                    errorCode = 404;
                     throw new Error ("No products found under this search.");
                 };
                 res.status(200).send(products);
