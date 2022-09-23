@@ -1,15 +1,15 @@
-<h1><b>LabEcommerce API</b></h1>
-<p>This API was developed to ease the information trade between users, admins, and databases; promoting a thorough organization and protection of any data involved.</p>
+<h1><b>🛍️LabEcommerce API🛍️</b></h1>
+<p>:rocket: This API was developed to ease the information trade between users, admins, and databases; promoting a thorough organization and protection of any data involved.</p>
 <hr>
 <br/>
 
 <h2>📜 Documentation</h2>
-<p>You can find all the documentation here:<p><a href="https://documenter.getpostman.com/view/21018840/2s7ZEBkLqv">Postman: LabEcommerce</a>.
+<p>You can find all the documentation here:<p>🖋️<a href="https://documenter.getpostman.com/view/21018840/2s7ZEBkLqv">Postman: LabEcommerce</a>.
 <hr>
 <br/>
 
 <h2>🔆 What's working:</h2>
-<p>Endpoints GET(getAllProducts, getAllUsers, getAllUserPurchases), POST(postProductRegistration, postUserRegistration, postPurchaseRegistration).
+<p>Endpoints GET(getAllProducts, getAllUsers, getAllUserPurchases), POST(postUserRegistration, postProductRegistration,  postPurchaseRegistration), DELETE (deleteUser, deleteProduct, deletePurchase).
 <hr>
 <br/>
 
