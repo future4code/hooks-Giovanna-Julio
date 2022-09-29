@@ -1,0 +1,47 @@
+### getAllUsers
+GET http://localhost:3306/users
+
+### getAllProducts
+GET http://localhost:3306/products?order=asc&search=sel
+
+### getAllPurchases
+GET http://localhost:3306/users/1/purchases
+
+### postUserRegistration
+POST http://localhost:3306/users
+Content-Type: application/json
+
+{
+    "name": "Gi", 
+    "email": "gi@gi.com", 
+    "password": "password"
+}
+
+### postProductRegistration
+POST http://localhost:3306/products 
+Content-Type: application/json
+
+{
+    "name": "Selfie",
+    "price": 20,
+    "image_url": "https://avatars.githubusercontent.com/u/62773607?s=48&v=4"
+}
+
+### postPurchaseRegistration 
+POST http://localhost:3306/purchases 
+Content-Type: application/json
+
+{
+    "user_id": "2632118f-b9cc-4dd8-a442-8cbf5c0a76fc",
+    "product_id": "7186de01-a622-45ae-9104-ffd14e4314b9",
+    "quantity": 3
+}
+
+### deleteUser
+DELETE http://localhost:3306/users/58ce870b-6501-42c6-b004-96150c265b4e
+
+### deleteProduct
+DELETE http://localhost:3306/products/7186de01-a622-45ae-9104-ffd14e4314b9
+
+### deletePurchase
+DELETE http://localhost:3306/purchases/93b9d1ba-ad48-4064-9e9a-f5ce8b73eaba
