@@ -1,6 +1,4 @@
-import express from 'express'
-import cors from 'cors'
-import dotenv from 'dotenv'
+import { app } from './app'
 import { ping } from './endpoints/ping'
 import { createUser } from './endpoints/createUser'
 import { getUsers } from './endpoints/getUsers'
@@ -9,32 +7,17 @@ import { getProducts } from './endpoints/getProducts'
 import { createPurchase } from './endpoints/createPurchase'
 import { getUserPurchases } from './endpoints/getUserPurchases'
 
-dotenv.config()
-const app = express()
 
-app.use(express.json())
-app.use(cors())
+app.get("/ping", ping);
 
-app.listen(process.env.PORT || 3003, () => {
-  console.log(`Servidor rodando na porta ${process.env.PORT || 3003}`)
-})
+app.post("/users", createUser);
 
-app.get("/ping", ping)
+app.get("/users", getUsers);
 
-// Exercício 1 - Create users
-app.post("/users", createUser)
+app.post("/products", createProduct);
 
-// Exercício 2 - Get users
-app.get("/users", getUsers)
+app.get("/products", getProducts);
 
-// Exercício 3 - Create product
-app.post("/products", createProduct)
+app.post("/purchases", createPurchase);
 
-// Exercício 4 - Get products
-app.get("/products", getProducts)
-
-// Exercício 5 - Create purchase
-app.post("/purchases", createPurchase)
-
-// Exercício 6 - Get user purchases
-app.get("/users/:id/purchases", getUserPurchases)
+app.get("/users/:id/purchases", getUserPurchases);

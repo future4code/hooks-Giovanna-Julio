@@ -1,13 +1,14 @@
 import { Request, Response } from "express"
-import connection from "../database/connection"
-import { TABLE_PRODUCTS } from "../database/tableNames"
+import { ProductDatabase } from "../database/ProductsDatabase";
 
 export const getProducts = async (req: Request, res: Response) => {
-    let errorCode = 400
+    let errorCode = 400;
+
     try {
-        const result = await connection(TABLE_PRODUCTS).select()
-        res.status(200).send({ products: result })
+        const result = await new ProductDatabase().getAllProducts();
+
+        res.status(200).send({ products: result });
     } catch (error) {
-        res.status(errorCode).send({ message: error.message })
-    }
-}
+        res.status(errorCode).send({ message: error.message });
+    };
+};

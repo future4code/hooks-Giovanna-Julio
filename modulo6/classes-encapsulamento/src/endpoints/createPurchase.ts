@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
-import connection from "../database/connection";
-import { TABLE_PRODUCTS, TABLE_PURCHASES, TABLE_USERS } from "../database/tableNames";
 import { v4 as generateId } from 'uuid';
-import { Product } from "../models/Product";
 import { Purchase } from "../models/Purchase";
+import { UserDatabase } from "../database/UserDatabase";
+import { ProductDatabase } from "../database/ProductsDatabase";
+import { PurchasesDatabase } from "../database/PurchasesDatabase";
 
 export const createPurchase = async (req: Request, res: Response) => {
     let errorCode = 400;
+
     try {
         const userId = req.body.userId;
         const productId = req.body.productId;
@@ -16,32 +17,25 @@ export const createPurchase = async (req: Request, res: Response) => {
             throw new Error("Failed to provide IDs or quantity..")
         };
 
-        const findUser = await connection(TABLE_USERS)
-            .select()
-            .where({ id: userId });
-        if (!findUser.length) {
+        const findUser = await new UserDatabase().getUserById(userId);
+        if (!findUser) {
             errorCode = 404
-            throw new Error("Usuário não encontrado.")
+            throw new Error("User not found.")
         };
 
-        const findProduct = await connection(TABLE_PRODUCTS)
-            .select()
-            .where({ id: productId });
-        if (!findProduct.length) {
+        const findProduct = await new ProductDatabase().getProductById(productId);
+        if (!findProduct) {
             errorCode = 404
-            throw new Error("Produto não encontrado.")
+            throw new Error("Product not found.")
         };
         
-        const product  = new Product(findProduct[0].id, findProduct[0].name, findProduct[0].price);
-        
-        const totalPrice = product.getPrice() * quantity ;
-        
+        const totalPrice = findProduct.getPrice() * quantity ;
         const newPurchase = new Purchase(generateId(), userId, productId, quantity, totalPrice);
 
-        await connection(TABLE_PURCHASES).insert(newPurchase)
+        await PurchasesDatabase.setNewPurchase(newPurchase);
 
-        res.status(201).send({ message: "Compra registrada", purchase: newPurchase })
+        res.status(201).send({ message: "Compra registrada", purchase: newPurchase });
     } catch (error) {
-        res.status(errorCode).send({ message: error.message })
-    }
-}
+        res.status(errorCode).send({ message: error.message });
+    };
+};

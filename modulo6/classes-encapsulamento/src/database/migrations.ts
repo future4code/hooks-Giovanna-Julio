@@ -1,32 +1,31 @@
 import connection from "./connection"
 import { products, purchases, users } from "./data"
-import { TABLE_PRODUCTS, TABLE_PURCHASES, TABLE_USERS } from "./tableNames"
 
 const createTables = async () => {
     await connection.raw(`
-DROP TABLE IF EXISTS ${TABLE_PURCHASES}, ${TABLE_PRODUCTS}, ${TABLE_USERS};
+        DROP TABLE IF EXISTS Labe_Purchases, Labe_Products, Labe_Users;
 
-CREATE TABLE IF NOT EXISTS ${TABLE_USERS}(
-    id VARCHAR(255) PRIMARY KEY,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
-);
+        CREATE TABLE IF NOT EXISTS Labe_Users(
+            id VARCHAR(255) PRIMARY KEY,
+            email VARCHAR(255) NOT NULL UNIQUE,
+            password VARCHAR(255) NOT NULL
+        );
 
-CREATE TABLE IF NOT EXISTS ${TABLE_PRODUCTS}(
-    id VARCHAR(255) PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    price DECIMAL(6,2) NOT NULL
-);
+        CREATE TABLE IF NOT EXISTS Labe_Products(
+            id VARCHAR(255) PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            price DECIMAL(6,2) NOT NULL
+        );
 
-CREATE TABLE IF NOT EXISTS ${TABLE_PURCHASES}(
-    id VARCHAR(255) PRIMARY KEY,
-    user_id VARCHAR(255) NOT NULL,
-    product_id VARCHAR(255) NOT NULL,
-    quantity INT NOT NULL,
-    total_price DECIMAL(6,2) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES ${TABLE_USERS}(id),
-    FOREIGN KEY (product_id) REFERENCES ${TABLE_PRODUCTS}(id)
-);
+        CREATE TABLE IF NOT EXISTS Labe_Purchases(
+            id VARCHAR(255) PRIMARY KEY,
+            user_id VARCHAR(255) NOT NULL,
+            product_id VARCHAR(255) NOT NULL,
+            quantity INT NOT NULL,
+            total_price DECIMAL(6,2) NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES Labe_Users(id),
+            FOREIGN KEY (product_id) REFERENCES Labe_Products(id)
+        );
     `)
     .then(() => {
         console.log(`Tables created successfully!`)
@@ -37,19 +36,19 @@ CREATE TABLE IF NOT EXISTS ${TABLE_PURCHASES}(
 
 const insertData = async () => {
     try {
-        await connection(TABLE_USERS)
+        await connection('Labe_Users')
             .insert(users)
-            .then(() => console.log(`${TABLE_USERS} populated!`))
+            .then(() => console.log(`Labe_Users populated!`))
             .catch((error: any) => printError(error))
 
-        await connection(TABLE_PRODUCTS)
+        await connection('Labe_Products')
             .insert(products)
-            .then(() => console.log(`${TABLE_PRODUCTS} populated!`))
+            .then(() => console.log(`Labe_Products populated!`))
             .catch((error: any) => printError(error))
 
-        await connection(TABLE_PURCHASES)
+        await connection('Labe_Purchases')
             .insert(purchases)
-            .then(() => console.log(`${TABLE_PURCHASES} populated!`))
+            .then(() => console.log(`Labe_Purchases populated!`))
             .catch((error: any) => printError(error))
 
     } catch (error: any) {

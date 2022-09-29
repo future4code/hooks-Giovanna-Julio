@@ -1,5 +1,5 @@
 import { Product } from "../models/Product";
-import { PurchaseDB } from "../models/Purchase";
+import { Purchase } from "../models/Purchase";
 import { User } from "../models/User";
 
 
@@ -17,7 +17,7 @@ export const products = [
     new Product("205", "Mouse Gamer", 399.99)
 ];
 
-export const purchases: PurchaseDB[] = [
+export const purchases: Purchase[] = [
     {
         id: "301",
         user_id: "101",

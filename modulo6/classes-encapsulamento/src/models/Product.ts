@@ -1,10 +1,19 @@
 export class Product {
     constructor(
         private id: string,
-        name: string,
+        private name: string,
         private price: number
     ){}
-    getPrice(): number{
+    
+    getId() {
+        return this.id
+    }
+
+    getName() {
+        return this.name
+    }
+
+    getPrice() {
         return this.price
     }
 };
