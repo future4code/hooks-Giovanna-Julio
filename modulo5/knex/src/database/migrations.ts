@@ -3,17 +3,15 @@ import connection from "./connection";
 const criarTabelaProdutos = async () => {
     try {
         await connection.raw(`
-            CREATE TABLE IF NOT EXISTS Produtos (
+            CREATE TABLE IF NOT EXISTS KnexUsers (
             id BIGINT PRIMARY KEY,
-            nome VARCHAR(255) NOT NULL,
-            preco DECIMAL(8, 2) NOT NULL,
-            categoria ENUM("acessórios", "calçados", "roupas") NOT NULL
-            );
+            name VARCHAR(255) NOT NULL,
+            email DECIMAL(8, 2) NOT NULL,
         `)
 
-        console.log("Tabela Produtos criada com sucesso.")
+        console.log("Tabela KnexUsers criada com sucesso.")
     } catch (error) {
-        console.log("Erro ao criar tabela Produtos.")
+        console.log("Erro ao criar tabela KnexUsers.")
         console.log(error.sqlMessage)
     }
 }
@@ -21,18 +19,18 @@ const criarTabelaProdutos = async () => {
 async function popularTabelaProdutos() {
     try {
         await connection.raw(`
-            INSERT INTO Produtos (id, nome, preco, categoria)
+            INSERT INTO KnexUsers (id, nome, email)
             VALUES 
-            (1, "Chinelo", 19.99, "calçados"),
-            (2, "Relógio", 30.00, "acessórios"),
-            (3, "Boné", 25.00, "acessórios"),
-            (4, "Camiseta", 49.99, "roupas"),
-            (5, "Calça", 99.00, "roupas");
+            (1, "Gio", "gio@mail.com"),
+            (2, "Bruno", "bru@mail.com"),
+            (3, "Giu", "giu@mail.com"),
+            (4, "Lucila", "lu@mail.com"),
+            (5, "Ney", "ney@mail.com");
         `)
         
-        console.log("Tabela Produtos populada com sucesso.")
+        console.log("Tabela KnexUsers populada com sucesso.")
     } catch (error) {
-        console.log("Erro ao popular tabela Produtos.")
+        console.log("Erro ao popular tabela KnexUsers.")
         console.log(error.sqlMessage)
     }
 }
