@@ -1,4 +1,4 @@
-<h1><b>🛍️LabEcommerce API🛍️</b></h1>
+<h1 align='center'><b>🛍️LabEcommerce API🛍️</b></h1>
 <p>:rocket: This API was developed to ease the information trade between users, admins, and databases; promoting a thorough organization and protection of any data involved.</p>
 <hr>
 <br/>
