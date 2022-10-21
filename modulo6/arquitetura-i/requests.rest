@@ -1,0 +1,8 @@
+### getAllUsers
+GET http://localhost:3306/all
+
+### insertUser
+POST http://localhost:3306/users
+
+### deleteUser
+DELETE http://localhost:3306/:id
