@@ -1,39 +1,55 @@
 import { UserDatabase } from '../data/UserDatabase';
-import { v4 as generateId } from 'uuid';
+import { CustomError } from '../error/CustomError';
+import { DuplicateEntry } from '../error/DuplicateEntry';
+import { InvalidInput } from '../error/InvalidInput';
+import { NoResults } from '../error/NoResults';
+import { IUserInputDTO } from '../models/IUserInputDTO';
+import { User } from '../models/User';
+import { generateId } from '../services/generateId';
 
 export class UserBusiness {
 	private userDatabase = new UserDatabase();
 
-	public async create({ email, name, password }: any): Promise<void> {
+	public async create(input: IUserInputDTO): Promise<void> {
 		try {
-			if (!email || !name || !password) {
+			if (!input.email || !input.name || !input.password) {
 				throw new Error('Dados inválidos (email, name, password)');
 			}
 
-			const id = generateId();
+			if(!input.email.includes("@")) {
+				throw new InvalidInput()
+			}
 
-			await this.userDatabase.create({
-				id,
-				name,
-				email,
-				password,
-			});
+			const verifyEmail = await this.userDatabase.getById(input.email)
+			
+			if (verifyEmail.length) {
+				throw new DuplicateEntry()
+			}
+
+			const newUser = new User(
+				generateId(),
+				input.name,
+				input.email,
+				input.password,
+			)
+
+			await this.userDatabase.create(newUser);
 		} catch (error: any) {
-			throw new Error(error.message);
+			throw new CustomError(error.statusCode, error.message || error.sqlMessage);
 		}
 	}
 
-	public async getAll() {
+	public async getAll(): Promise <User[]> {
 		try {
 			const result = await this.userDatabase.getAll();
 
 			if (!result.length) {
-				throw new Error('No users found.');
+				throw new NoResults()
 			}
 
 			return result;
 		} catch (error: any) {
-			throw new Error(error.message);
+			throw new CustomError(error.statusCode, error.message || error.sqlMessage);
 		}
 	}
 }

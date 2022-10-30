@@ -1,32 +1,40 @@
+import { CustomError } from '../error/CustomError';
+import { User } from '../models/User';
 import { BaseDatabase } from './BaseDatabase';
 
 export class UserDatabase extends BaseDatabase {
-	private static TABLE_NAME = 'LABEFLIX_USER';
+	TABLE_NAME = 'LABEFLIX_USER';
 
-	public async create({ id, name, email, password }: any): Promise<void> {
+	public async create(newUser: User): Promise<void> {
 		try {
-			await UserDatabase.connection
-				.insert({
-					id,
-					name,
-					email,
-					password,
-				})
-				.into(UserDatabase.TABLE_NAME);
+			await UserDatabase.connection(this.TABLE_NAME)
+				.insert(newUser)
+
 		} catch (error: any) {
-			throw new Error(error.message);
+			throw new CustomError(error.statusCode, error.message || error.sqlMessage);
 		}
 	}
 
-	public async getAll(): Promise<any> {
+	public async getAll(): Promise<User[]> {
 		try {
-			const result = await UserDatabase.connection
+			const result = await UserDatabase.connection(this.TABLE_NAME)
 				.select()
-				.from(UserDatabase.TABLE_NAME);
 
 			return result;
 		} catch (error: any) {
-			throw new Error(error.message);
+			throw new CustomError(error.statusCode, error.message || error.sqlMessage);
+		}
+	}
+
+	public async getById(email: string): Promise<any> {
+		try {
+			const result = await UserDatabase.connection(this.TABLE_NAME)
+				.select()
+				.where({ email })
+
+			return result
+		} catch (error: any) {
+			throw new CustomError(error.statusCode, error.message || error.sqlMessage);
 		}
 	}
 }
