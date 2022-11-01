@@ -20,7 +20,8 @@ export class PostDatabase extends BaseDatabase {
 		try {
 			const result = await PostDatabase.connection(this.TABLE_NAME)
 				.select()
-				.where({ id });
+				.where({ id })
+				.orderBy('asc');
 
 			return result;
 		} catch (error: any) {

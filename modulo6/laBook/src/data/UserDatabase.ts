@@ -1,4 +1,5 @@
 import { CustomError } from '../error/CustomError';
+import { Friendship } from '../models/Friendship';
 import { User } from '../models/User';
 import { BaseDatabase } from './BaseDatabase';
 
