@@ -3,16 +3,6 @@
 <hr>
 <br/>
 
-<h2>🔆 What's working:</h2>
-<p></p>
-<hr>
-<br/>
-
-<h2>🔅 What's not working:</h2>
-<p></p>
-<hr>
-<br/>
-
 <h2>:electron: Technologies:</h2>
 <ul>
     <li>💡 Express and Cors</li>
