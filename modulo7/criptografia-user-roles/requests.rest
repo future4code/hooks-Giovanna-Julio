@@ -1,0 +1,21 @@
+### SignUp
+POST http://localhost:3306/user/signup
+Content-Type: application/json
+
+{
+    "email": "example@gmail.com",
+    "password": "password123"
+}
+
+### Login
+POST http://localhost:3306/user/login
+Content-Type: application/json
+
+{
+    "email": "example@gmail.com",
+    "password": "password123"
+}
+
+### GetActiveUsers
+GET http://localhost:3306/user/profile
+Authorization: "hJNSN8n8by6vvww"

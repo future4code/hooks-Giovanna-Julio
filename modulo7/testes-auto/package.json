@@ -1,0 +1,42 @@
+{
+  "name": "backend-base",
+  "version": "1.0.0",
+  "description": "Backend technologies learned and applied.",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./build/index.js",
+    "migrations": "tsc && node ./build/database/migrations.js",
+    "dev": "ts-node-dev ./src/index.ts",
+    "test": "jest",
+    "test-dev": "jest --watch"
+  },
+  "keywords": [],
+  "author": "gjulio98",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jest": "^29.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^2.3.0",
+    "mysql": "^2.18.1",
+    "node": "^19.0.0",
+    "ts-node": "^10.9.1",
+    "typescipt": "^1.0.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/jest": "^29.2.4",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/knex": "^0.16.1",
+    "@types/node": "^18.11.2",
+    "@types/uuid": "^8.3.4",
+    "ts-jest": "^29.0.3",
+    "ts-node-dev": "^2.0.0"
+  }
+}
